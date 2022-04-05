@@ -42,7 +42,7 @@ public class GestionnaireCompte {
     }
     
     public List<CompteBancaire> getAllComptes(){
-       String s = "select * from compteBancaire ";
+       String s = "SELECT c FROM CompteBancaire c";
        TypedQuery<CompteBancaire> query = em.createQuery(s, CompteBancaire.class);
        List<CompteBancaire> liste = query.getResultList();
        return liste;
