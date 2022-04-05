@@ -47,4 +47,10 @@ public class GestionnaireCompte {
        List<CompteBancaire> liste = query.getResultList();
        return liste;
     }
+    
+    public long nbComptes() {
+        TypedQuery<Long> query
+            = em.createQuery("select count(c) from CompteBancaire c", Long.class);
+        return query.getSingleResult();
+    }
 }
