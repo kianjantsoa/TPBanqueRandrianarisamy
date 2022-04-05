@@ -11,6 +11,7 @@ import java.util.List;
 import javax.ejb.EJB;
 import mg.itu.tpbanquerandrianarisamy.ejb.GestionnaireCompte;
 import mg.itu.tpbanquerandrianarisamy.entities.CompteBancaire;
+import mg.itu.tpbanquerandrianarisamy.util.Util;
 
 /**
  *
@@ -37,4 +38,11 @@ public class ListeComptes implements Serializable {
         }
         return liste;
     }
+    
+    public String supprimerCompte(CompteBancaire compte){
+        gestionnaireCompte.supprimerCompte(compte);
+        Util.addFlashInfoMessage("Le compte de "+ compte.getNom() +" a eté supprimer avec succes");
+        return "listeComptes?faces-redirect=true";
+    }
+    
 }

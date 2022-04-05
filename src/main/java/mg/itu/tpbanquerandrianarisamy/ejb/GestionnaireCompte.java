@@ -66,6 +66,7 @@ public class GestionnaireCompte {
         }
     }
     
+    
     public void retrait(CompteBancaire compte , int solde){
         compte.retirer(solde);
         update(compte);
@@ -82,5 +83,9 @@ public class GestionnaireCompte {
     
     public CompteBancaire getById(long id){
         return em.find(CompteBancaire.class, id);
+    }
+    
+    public void supprimerCompte(CompteBancaire compte){
+        em.remove(em.merge(compte));
     }
 }

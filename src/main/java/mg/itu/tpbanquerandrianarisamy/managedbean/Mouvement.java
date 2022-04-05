@@ -51,6 +51,7 @@ public class Mouvement implements Serializable{
         compteCourant = gestionnaireCompte.getById(idCompte);
     }
     
+    
     public String effectuerMouvement(){
          if(typeMouvement.equals("retrait")){
             gestionnaireCompte.retrait(compteCourant, solde);
