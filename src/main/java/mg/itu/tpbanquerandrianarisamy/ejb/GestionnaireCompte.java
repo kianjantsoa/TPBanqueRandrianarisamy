@@ -66,6 +66,16 @@ public class GestionnaireCompte {
         }
     }
     
+    public void retrait(CompteBancaire compte , int solde){
+        compte.retirer(solde);
+        update(compte);
+    }
+    
+    public void versement(CompteBancaire compte ,int solde){
+        compte.deposer(solde);
+        update(compte);
+    }
+    
     public CompteBancaire update(CompteBancaire compteBancaire) {
         return em.merge(compteBancaire);
     }
