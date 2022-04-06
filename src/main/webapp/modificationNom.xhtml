@@ -22,11 +22,13 @@
 
                     <h:form>
                         <h1><h:outputText value="Create/Edit"/></h1>
-                        <p:panelGrid columns="2">
+                        <p:panelGrid columns="3">
                             <p:outputLabel value="Nom:" for="nom" />
                             <p:inputText id="nom" value="#{modificationNom.compteBancaire.nom}" title="Nom" />
+                            <h:message for="nom"/>
                             <p:outputLabel value="Solde:" for="solde" />
                             <p:inputText id="solde" value="#{modificationNom.compteBancaire.solde}" title="Solde" />
+                            <h:message for="solde"/>
                             <p:outputLabel value="Id:" for="id" />
                             <p:inputText id="id" value="#{modificationNom.compteBancaire.id}" title="Id" readonly="true" />
                             
