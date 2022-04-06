@@ -36,7 +36,7 @@
                                 </f:facet>
                                 <h:outputText value="#{item.nom}"/>
                             </p:column>
-                            <p:column style="text-align:right;" width="200"
+                            <p:column style="text-align:right;" width="100"
                         sortBy="#{item.solde}"
                         filterBy="#{item.solde}">
                                 <f:facet name="header">
@@ -50,6 +50,10 @@
                                      title="Supprimer un compte">                                     
                                      <h:graphicImage name="/images/del.png" />
                                  </h:commandLink>
+                                 <br/>
+                                    <h:link title="Modifier le nom #{item.nom}"
+                                    value="Modifier le nom"
+                                    outcome="modificationNom?id=#{item.id}"  />
                             </p:column>
                             
                         </p:dataTable>
